@@ -1,0 +1,47 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# Root-level dependencies
+node_modules/
+
+# Frontend (Next.js/React) specific ignores
+frontend/node_modules
+frontend/.next/
+frontend/out/
+
+# Backend (Express/Node.js) specific ignores
+backend/node_modules
+
+# Yarn specific ignores
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# Testing related ignores
+/coverage
+
+# Production build output
+/build 
+
+# Misc OS and editor generated files
+.DS_Store
+*.pem
+
+# Debugging logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# Environment files 
+.env*
+
+# Vercel specific ignores 
+.vercel
+
+# TypeScript specific ignores
+*.tsbuildinfo
+next-env.d.ts
