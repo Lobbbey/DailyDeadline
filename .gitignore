@@ -1,17 +1,24 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
-# Root-level dependencies
+# Root-level dependencies (if you have any shared node_modules at the root)
 node_modules/
 
-# Frontend (Next.js/React) specific ignores
+# Frontend (Next.js) specific ignores
 frontend/node_modules
 frontend/.next/
-frontend/out/
+frontend/out/ # For Next.js static exports
 
-# Backend (Express/Node.js) specific ignores
+# Frontend (Next.js) specific ignores
 backend/node_modules
+backend/.next/
+backend/out/ # For Next.js static exports
 
-# Yarn specific ignores
+# Backend (NestJS/Node.js) specific ignores
+Backend/node_modules
+
+
+# Yarn specific ignores (if you're using Yarn workspaces or pnp)
+# Adjust these if they are global or specific to a sub-project
 /.pnp
 .pnp.*
 .yarn/*
@@ -23,8 +30,8 @@ backend/node_modules
 # Testing related ignores
 /coverage
 
-# Production build output
-/build 
+# Production build output (if built at root, or specific to a sub-project)
+/build # If you have a root-level build directory
 
 # Misc OS and editor generated files
 .DS_Store
@@ -36,12 +43,13 @@ yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
-# Environment files 
+# Environment files (can opt-in for committing if needed)
+# It's generally good practice to ignore these and provide .env.example
 .env*
 
-# Vercel specific ignores 
+# Vercel specific ignores (if deploying frontend with Vercel)
 .vercel
 
 # TypeScript specific ignores
 *.tsbuildinfo
-next-env.d.ts
+next-env.d.ts # Specific to Next.js, keep it in Frontend/ if you move it there
